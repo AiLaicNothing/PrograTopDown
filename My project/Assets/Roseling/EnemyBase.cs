@@ -2,9 +2,9 @@ using UnityEngine;
 
 public abstract class EnemyBase : MonoBehaviour
 {
-    public int lifeMax = 100;
-    public int lifeAct;
-    public int damage = 10;
+    public float lifeMax = 100f;
+    public float lifeAct;
+    public float damage = 10f;
 
     protected virtual void Start()
     {
@@ -13,7 +13,7 @@ public abstract class EnemyBase : MonoBehaviour
 
     public virtual void RecibirDaño(float cantidad)
     {
-        lifeAct -= (int)cantidad;
+        lifeAct -= cantidad;
 
         if (lifeAct <= 0)
         {
