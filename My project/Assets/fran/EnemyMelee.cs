@@ -20,12 +20,22 @@ public class EnemyMelee : EnemyBase
     // referencia al jugador
     private Transform player;
 
+    // agregué referencia al script Movement
+    // porque me di cuenta que EnemyBase
+    // no tenía movimiento integrado
+    // y preferí separar movimiento y combate
+    private Movement movement;
+
     protected override void Start()
     {
         // llama al Start del EnemyBase
         base.Start();
 
         attacking = false;
+
+        // agregué esto para obtener
+        // el componente Movement del enemigo
+        movement = GetComponent<Movement>();
 
         // busca el objeto con tag "Player"
         GameObject playerObject =
@@ -77,17 +87,22 @@ public class EnemyMelee : EnemyBase
             Color.red
         );
 
-        // lanza raycast hacia el frente REAL del enemigo
+        // lanza raycast hacia el frente del enemigo
         if (Physics.Raycast(
             origin,
             transform.forward,
             out hit,
             detectionDistance))
         {
-            // si golpea al jugador
+            // si detecta al jugador
             if (hit.collider.CompareTag("Player"))
             {
                 playerDetected = true;
+
+                // agregué esto para activar
+                // el movimiento solo cuando
+                // el enemigo detecta al player
+                movement.canMove = true;
 
                 Debug.Log("Player detectado");
             }
@@ -115,11 +130,8 @@ public class EnemyMelee : EnemyBase
             );
 
         // eliminé el movimiento de aquí
-        // porque me di cuenta que EnemyBase
-        // no tenía movimiento integrado
-
-        // ahora el script Movement
-        // se encargará de mover al enemigo
+        // porque ahora Movement.cs
+        // se encarga de mover al enemigo
     }
 
     private void OnTriggerEnter(Collider other)
