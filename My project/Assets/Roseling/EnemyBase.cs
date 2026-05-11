@@ -1,7 +1,8 @@
 using UnityEngine;
 
-public abstract class EnemyBase : MonoBehaviour
+public abstract class EnemyBase : MonoBehaviour, IDamageable
 {
+
     public float lifeMax = 100f;
     public float lifeAct;
     public float damage = 10f;
@@ -11,9 +12,9 @@ public abstract class EnemyBase : MonoBehaviour
         lifeAct = lifeMax;
     }
 
-    public virtual void RecibirDaño(float cantidad)
+    public virtual void TakeDamage(float damage)
     {
-        lifeAct -= cantidad;
+        lifeAct -= damage;
 
         if (lifeAct <= 0)
         {
