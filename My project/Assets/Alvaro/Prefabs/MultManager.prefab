@@ -365,9 +365,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4599110259598225414}
   - component: {fileID: 2651835028815686609}
+  - component: {fileID: 771497720627282279}
   m_Layer: 0
   m_Name: MultManager
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -401,8 +402,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e424a5ead146404ab3cc90961b41646, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LeaderDeath
+  lifeMax: 100
+  lifeAct: 0
+  damage: 10
   leader: {fileID: 4186766890337763784}
   group: {fileID: 7871586456850599213}
+--- !u!65 &771497720627282279
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3786776685774670771}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.33, y: 2.13, z: 0.95}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4186766890337763784
 GameObject:
   m_ObjectHideFlags: 0
