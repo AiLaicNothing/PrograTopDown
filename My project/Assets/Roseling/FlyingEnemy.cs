@@ -5,6 +5,9 @@ public class FlyingEnemy : EnemyBase
     public float speed = 5f;
     public Transform target; // poner al player como target oki9s
 
+    public float attackCooldown = 1f;
+    private float lastAttackTime;
+
     private void Update()
     {
         Move();
@@ -23,6 +26,19 @@ public class FlyingEnemy : EnemyBase
             targetPos,
             speed * Time.deltaTime
         );
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (Time.time < lastAttackTime + attackCooldown) return;
+
+        IDamageable damageable = other.GetComponent<IDamageable>();
+
+        if (damageable != null)
+        {
+            damageable.TakeDamage(damage);
+            lastAttackTime = Time.time;
+        }
     }
 
     protected override void Dead()
