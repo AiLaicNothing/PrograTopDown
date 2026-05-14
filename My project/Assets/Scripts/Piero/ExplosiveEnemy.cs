@@ -67,7 +67,6 @@ public class ExplosiveEnemy :  EnemyBase
     }
     protected override void Dead()
     {
-        Destroy(gameObject);
-        Debug.Log("The explosive enemy is dead!");
+        base.Dead();
     }
 }

@@ -126,9 +126,10 @@ GameObject:
   - component: {fileID: 6678933173063027144}
   - component: {fileID: 1317192851069233578}
   - component: {fileID: 789994244334479307}
+  - component: {fileID: 6734240699448887154}
   m_Layer: 0
   m_Name: FlyingEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -220,9 +221,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FlyingEnemy
   lifeMax: 100
   lifeAct: 100
-  damage: 10
+  damage: 1
   speed: 5
-  target: {fileID: 0}
+  target: {fileID: 3776685574028639798, guid: e10d601c4231ae24fb14337f30445877, type: 3}
+  attackCooldown: 1
 --- !u!54 &1317192851069233578
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -269,5 +271,26 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.2791853, y: 0.71584904, z: 1}
+  m_Size: {x: 3.14, y: 1.38, z: 1.86}
   m_Center: {x: 0.005753517, y: -0.001550749, z: 0}
+--- !u!65 &6734240699448887154
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8831348603362201828}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.42, y: 1, z: 1.06}
+  m_Center: {x: 0, y: 0, z: 0}

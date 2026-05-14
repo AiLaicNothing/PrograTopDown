@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class LeaderDeath : MonoBehaviour
+public class LeaderDeath : EnemyBase
 {
     [SerializeField] GameObject leader;
     [SerializeField] GameObject group;

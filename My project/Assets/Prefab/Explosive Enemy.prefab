@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6062506578887613696}
   m_Layer: 0
   m_Name: Explosive Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,7 +108,6 @@ MonoBehaviour:
   lifeMax: 100
   lifeAct: 0
   damage: 10
-  explosionRadius: 8
   speed: 5
 --- !u!54 &1486923701127584106
 Rigidbody:
