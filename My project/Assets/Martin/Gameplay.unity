@@ -376,10 +376,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1353279442096389147, guid: e10d601c4231ae24fb14337f30445877, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: b937574bd4b93524c9a5d286fbd33fbf, type: 2}
     - target: {fileID: 3776685574028639798, guid: e10d601c4231ae24fb14337f30445877, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.00029
@@ -420,14 +416,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5059472404711437376, guid: e10d601c4231ae24fb14337f30445877, type: 3}
-      propertyPath: bulletPrefab
-      value: 
-      objectReference: {fileID: 1910151500593390709, guid: 6228742273bacb54e84b32c2fa07cf1a, type: 3}
-    - target: {fileID: 5476913172661371400, guid: e10d601c4231ae24fb14337f30445877, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: b937574bd4b93524c9a5d286fbd33fbf, type: 2}
     - target: {fileID: 7224482506619456006, guid: e10d601c4231ae24fb14337f30445877, type: 3}
       propertyPath: m_Name
       value: Player
