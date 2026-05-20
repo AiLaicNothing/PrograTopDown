@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using TMPro;
 
-public class DashEnemy : EnemyBase
+public class DashEnemy : EnemyBase, IObserver
 {
     
     [SerializeField] private Detect detect;
@@ -21,6 +21,11 @@ public class DashEnemy : EnemyBase
         recoil = 16;
     }
 
+    protected override void Start()
+    {
+        base.Start();
+        GameManager.Instance.Attach(this);
+    }
     void Update()
     {
         EnemyMovement();
@@ -73,6 +78,14 @@ public class DashEnemy : EnemyBase
         {
             TakeDamage(10f);
             Debug.Log("Enemy took damage from bullet!");
+        }
+    }
+
+    public void Execute(ISubject subject)
+    {
+        if(subject is GameManager)
+        {
+            speed =((GameManager)subject).progression;
         }
     }
 }
