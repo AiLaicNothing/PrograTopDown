@@ -97,6 +97,11 @@ public class Player : MonoBehaviour, IDamageable
         if (currentHealth <= 0f)
         {
             Destroy(gameObject);
+
+            DefeatManager.instance.ShowDefeat();
+
+            gameObject.SetActive(false);
         }
     }
+ 
 }
