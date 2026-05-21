@@ -7,21 +7,25 @@ public class MultiplicativeEnemy : EnemyBase
     [SerializeField] private Transform shootPoint;
     private GameObject player;
     private int speed = 2;
-    private void Start()
+    protected override void Start()
     {
         base.Start();
-        GameObject player= GameObject.FindGameObjectWithTag("Player");
+        player= GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(Shooting());
     }
     private IEnumerator Shooting() 
     {
-        Shoot();
-        yield return new WaitForSeconds(3);
+        while(player!=null)
+        {
+            Shoot();
+            yield return new WaitForSeconds(3);
+            Debug.Log("I've shooted");
+        }
     }
     private void Shoot()
     {
         GameObject bullet=Instantiate(bulletPrefab,shootPoint.position,Quaternion.identity);
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
-        rb.linearVelocity = new Vector3(rb.linearVelocity.x * speed, 0, 0);
+        rb.AddForce(transform.forward * speed, ForceMode.Impulse);
     }
 }
