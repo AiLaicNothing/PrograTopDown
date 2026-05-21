@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1771962984214734106
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2609367353693056550}
+  m_Layer: 0
+  m_Name: blade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2609367353693056550
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771962984214734106}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.48893586, y: -0.48016465, z: -0.5102859, w: 0.51960754}
+  m_LocalPosition: {x: -0.2, y: -0.0069999695, z: 0.62}
+  m_LocalScale: {x: 0.29996002, y: 0.94529384, z: 0.29996002}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5852682713258327551}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3593096686597047405
 GameObject:
   m_ObjectHideFlags: 0
@@ -36,7 +67,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 90549625153242734}
+  - {fileID: 2609367353693056550}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7071454941646277000
@@ -144,7 +175,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &3508555434013277214
+--- !u!114 &2061039262132326545
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -153,27 +184,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3593096686597047405}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91e40d2b7c425e142b272eafa93df7b7, type: 3}
+  m_Script: {fileID: 11500000, guid: fa61f49f329b8d144af6124358873e95, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyMelee
+  m_EditorClassIdentifier: Assembly-CSharp::meeleeenemy
   lifeMax: 100
   lifeAct: 0
   damage: 10
-  rotationSpeed: 2
-  detectionDistance: 10
-  blade: {fileID: 4768544577275023888}
---- !u!114 &6804059968645279833
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3593096686597047405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 582c6631f94a7044782f7e47820a3606, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Movement
   speed: 3
   canMove: 0
 --- !u!65 &565870537479784892
