@@ -44,7 +44,6 @@ public class Boss : EnemyBase
         agent.updateRotation = true;
         agent.updateUpAxis = true;
 
-        // Recommended when using NavMeshAgent
         if (rb != null)
         {
             rb.isKinematic = true;
