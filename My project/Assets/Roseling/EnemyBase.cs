@@ -2,14 +2,22 @@ using UnityEngine;
 
 public abstract class EnemyBase : MonoBehaviour, IDamageable
 {
-
     public float lifeMax = 100f;
+
     public float lifeAct;
+
     public float damage = 10f;
+
+    protected EnemySpawner spawner;
 
     protected virtual void Start()
     {
         lifeAct = lifeMax;
+    }
+
+    public void SetSpawner(EnemySpawner enemySpawner)
+    {
+        spawner = enemySpawner;
     }
 
     public virtual void TakeDamage(float damage)
@@ -24,6 +32,10 @@ public abstract class EnemyBase : MonoBehaviour, IDamageable
 
     protected virtual void Dead()
     {
+        if (spawner != null)
+        {
+            spawner.EnemyKilled();
+        }
 
         Destroy(gameObject);
     }
