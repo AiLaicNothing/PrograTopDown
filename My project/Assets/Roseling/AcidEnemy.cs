@@ -43,7 +43,11 @@ public class AcidEnemy : EnemyBase
 
     private void Explode()
     {
-        Instantiate(acidPrefab, transform.position, Quaternion.identity);
+        Vector3 acidPosition = transform.position;
+
+        acidPosition.y = 0f;
+
+        Instantiate(acidPrefab, acidPosition, Quaternion.identity);
 
         Dead();
     }
