@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 8546721483331844344}
   m_Layer: 0
   m_Name: EnemigoSuicida2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -269,6 +269,7 @@ MonoBehaviour:
   lifeMax: 100
   lifeAct: 0
   damage: 10
+  scoreValue: 100
   speed: 4
   playerTag: Player
   acidPrefab: {fileID: 801803106136653209, guid: 6ffac783b228a4b4e82018368c6a1714, type: 3}

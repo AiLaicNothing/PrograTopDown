@@ -15,6 +15,7 @@ public class Player : MonoBehaviour, IDamageable
     [SerializeField] private float bulletSpeed = 20f;
 
     private float currentHealth;
+    public float CurrentHealth => currentHealth;
 
     private Vector2 moveInput;
 
@@ -96,12 +97,12 @@ public class Player : MonoBehaviour, IDamageable
 
         if (currentHealth <= 0f)
         {
-            Destroy(gameObject);
+            currentHealth = 0f;
 
-            DefeatManager.instance.ShowDefeat();
+            DefeatManager.Instance.ShowDefeat();
 
             gameObject.SetActive(false);
         }
     }
- 
+
 }
