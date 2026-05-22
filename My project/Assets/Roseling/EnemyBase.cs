@@ -8,6 +8,9 @@ public abstract class EnemyBase : MonoBehaviour, IDamageable
 
     public float damage = 10f;
 
+    public int scoreValue = 100;
+
+
     protected EnemySpawner spawner;
 
     protected virtual void Start()
@@ -32,6 +35,8 @@ public abstract class EnemyBase : MonoBehaviour, IDamageable
 
     protected virtual void Dead()
     {
+        GameManager.Instance.AddKill(scoreValue);
+
         if (spawner != null)
         {
             spawner.EnemyKilled();

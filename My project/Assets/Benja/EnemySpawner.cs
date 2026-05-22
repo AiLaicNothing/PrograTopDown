@@ -18,6 +18,14 @@ public class EnemySpawner : MonoBehaviour, IObserver
         StartWave();
     }
 
+    private void OnDestroy()
+    {
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.Detach(this);
+        }
+    }
+
     public void Execute(ISubject subject)
     {
         StartWave();
@@ -25,7 +33,8 @@ public class EnemySpawner : MonoBehaviour, IObserver
 
     private void StartWave()
     {
-        int enemiesToSpawn = Fibonacci(GameManager.Instance.progression);
+        int enemiesToSpawn =
+            Fibonacci(GameManager.Instance.progression);
 
         enemiesAlive = enemiesToSpawn;
 
@@ -44,13 +53,25 @@ public class EnemySpawner : MonoBehaviour, IObserver
 
     private void SpawnEnemy()
     {
-        GameObject enemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
+        GameObject enemyPrefab =
+            enemyPrefabs[
+                Random.Range(0, enemyPrefabs.Length)
+            ];
 
-        Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+        Transform spawnPoint =
+            spawnPoints[
+                Random.Range(0, spawnPoints.Length)
+            ];
 
-        GameObject enemy = Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
+        GameObject enemy =
+            Instantiate(
+                enemyPrefab,
+                spawnPoint.position,
+                Quaternion.identity
+            );
 
-        EnemyBase enemyScript = enemy.GetComponent<EnemyBase>();
+        EnemyBase enemyScript =
+            enemy.GetComponent<EnemyBase>();
 
         enemyScript.SetSpawner(this);
     }
